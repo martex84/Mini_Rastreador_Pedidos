@@ -56,8 +56,8 @@ public class PedidoService {
         pedido.setStatus(StatusPedido.valueOf(statusPedidoAtual));
     }
 
-    public PedidoDTO.PedidoResponse getPedido(String idUsuario, PedidoDTO.PedidoGetRequest pedidoGetRequest){
-        var pedido =  pedidoRepository.findById(Long.parseLong(pedidoGetRequest.idPedido())).orElseThrow(() -> new RuntimeException("O usuário não tem pedido cadastrado!"));
+    public PedidoDTO.PedidoResponse getPedido(String idUsuario, String id){
+        var pedido =  pedidoRepository.findById(Long.parseLong(id)).orElseThrow(() -> new RuntimeException("O usuário não tem pedido cadastrado!"));
 
         if(!pedido.getUsuario().getId().toString().equals(idUsuario)) throw new RuntimeException("O pedido atual não é do usuário!");
 

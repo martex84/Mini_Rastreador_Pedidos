@@ -4,10 +4,7 @@ import com.martex.mini_rastreador_pedidos.service.PedidoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import com.martex.mini_rastreador_pedidos.dto.PedidoDTO;
 
 import java.util.List;
@@ -31,9 +28,9 @@ public class PedidoController {
     }
 
     @GetMapping("/pedido")
-    public ResponseEntity<PedidoDTO.PedidoResponse> listarPedido(@AuthenticationPrincipal String dadosToken, @RequestBody PedidoDTO.PedidoGetRequest pedidoGetRequest) {
+    public ResponseEntity<PedidoDTO.PedidoResponse> listarPedido(@AuthenticationPrincipal String dadosToken, @RequestParam String id) {
         try {
-            return ResponseEntity.ok(pedidoService.getPedido(dadosToken, pedidoGetRequest));
+            return ResponseEntity.ok(pedidoService.getPedido(dadosToken, id));
         }
         catch (RuntimeException e) {
             return ResponseEntity.badRequest().build();

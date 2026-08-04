@@ -1,0 +1,42 @@
+.container_main_pedidos {
+  height: 500px;
+}
+
+.container_pedido_minimo {
+  background-color: #e7eaee;
+  border-radius: 10px;
+  width: 80%;
+  height: 150px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container_informacao_separada {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.titulo_informacao {
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.informacao_unitaria_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.informacao_principal {
+  font-size: x-large;
+}
+
+.container_button_destaque {
+  width: 100px;
+}
+
+.button_destaque {
+  background-color: #8b94a3;
+}

@@ -13,9 +13,6 @@ export default function PedidoUnitario(props: Readonly<Props>) {
           <span className="informacao_principal">#</span>
           <span className="informacao_principal">{props.pedido.idPedido}</span>
         </div>
-        <div className="container_button_destaque">
-          <button className="button_destaque">Ver Mais</button>
-        </div>
       </div>
       <div className="container_informacao_separada">
         <span className="titulo_informacao">Endereço</span>

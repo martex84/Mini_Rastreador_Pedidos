@@ -1,0 +1,91 @@
+* {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#tela_principal {
+  background-color: #e7eaee;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container_input {
+  padding: 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.span_input {
+  font-size: 20px;
+}
+
+.input {
+  height: 25px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.container_button_main {
+  padding: 5px;
+  width: 80%;
+  height: 30px;
+}
+
+.container_buttons {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  width: 100%;
+  height: 100%;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 20px;
+  background-color: #1e2430;
+  color: #e7eaee;
+  cursor: pointer;
+}
+
+a {
+  font-size: large;
+  color: #1e2430;
+}
+
+h1,
+h2,
+h3 {
+  color: #1e2430;
+}
+
+#container_main {
+  background-color: #c6cbd3;
+  padding: 25px;
+  min-width: 350px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  overflow-y: auto;
+}
+
+/* 
+#E7EAEE
+#C6CBD3
+#8B94A3
+#3C4658
+#1E2430 
+*/

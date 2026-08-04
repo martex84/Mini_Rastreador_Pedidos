@@ -91,22 +91,21 @@ npm run dev
 
 ### **Autenticação (Rotas Públicas)**
 
-| Método | Endpoint                | Descrição                           | Body de Exemplo (JSON)                                             |
-| ------ | ----------------------- | ----------------------------------- | ------------------------------------------------------------------ |
+| Método | Endpoint    | Descrição                                                 | Body de Exemplo (JSON)                                             |
+| ------ | ----------- | --------------------------------------------------------- | ------------------------------------------------------------------ |
 | `POST` | `/register` | Cadastra um novo usuário no sistema e retorna o Token JWT | `{ "nome": "João", "email": "joao@email.com", "password": "123" }` |
-| `POST` | `/login`    | Realiza login e retorna o Token JWT | `{ "email": "joao@email.com", "password": "123" }`                 |
+| `POST` | `/login`    | Realiza login e retorna o Token JWT                       | `{ "email": "joao@email.com", "password": "123" }`                 |
 
 ### **Pedidos (Rotas Protegidas - Requer `Authorization: Bearer <token>`)**
 
-| Método | Endpoint                | Descrição                           | Body de Exemplo (JSON)                                             |
-| ------ | ----------------------- | ----------------------------------- | ------------------------------------------------------------------ |
-| `POST` | `/item`  | Cria um novo item | `{"nome": "Nome Item"}` |
-| `POST` | `/pedido` | Cria um novo pedido | `{"idItem": "1", "endereco": "Endereço"}` |
+| Método | Endpoint                   | Descrição                                | Body de Exemplo (JSON)                                   |
+| ------ | -------------------------- | ---------------------------------------- | -------------------------------------------------------- |
+| `POST` | `/item`                    | Cria um novo item                        | `{"nome": "Nome Item"}`                                  |
+| `POST` | `/pedido`                  | Cria um novo pedido                      | `{"idItem": "1", "endereco": "Endereço"}`                |
 | `POST` | `/pedido/atualizar_status` | Atualiza o status de um pedido existente | `{"idPedido": "1", "statusPedido": "SAIU_PARA_ENTREGA"}` |
-| `GET` | `/pedidos`  | Lista todos os pedidos cadastrados | SEM BODY |
-| `GET` | `/pedido/{id}` | Busca os detalhes de um pedido por ID | SEM BODY |
-| `GET` | `/items` | Lista todos os itens | SEM BODY |
-
+| `GET`  | `/pedidos`                 | Lista todos os pedidos cadastrados       | SEM BODY                                                 |
+| `GET`  | `/pedido/{id}`             | Busca os detalhes de um pedido por ID    | SEM BODY                                                 |
+| `GET`  | `/items`                   | Lista todos os itens                     | SEM BODY                                                 |
 
 ## 💡 Decisões Arquiteturais
 
@@ -115,6 +114,30 @@ npm run dev
 3. **Persistência Sem Dependências Externas:** Escolha do H2 embutido durante a execução do servidor, para garantir que a equipe avaliadora possa rodar o projeto imediatamente sem necessidade de subir containers adicionais.
 
 ---
+
+## 📌 Próximos Passos (Roadmap)
+
+Este projeto encontra-se em constante evolução. Abaixo estão os pontos mapeados para as próximas melhorias e implementações:
+
+### ⚙️ **Back-end**
+
+- [ ] **Testes Automatizados:** Inclusão de suítes de testes unitários, de integração e testes de ponta a ponta (E2E).
+- [ ] **Refatoração de Cadastro:** Melhoria no cadastro de itens e separação explícita entre as entidades de Usuário e Cliente na criação dos pedidos.
+
+### 💻 **Front-end**
+
+- [ ] **Testes Unitários:** Implementação de testes para os componentes e hooks do React.
+- [ ] **Responsividade & UX:** Aprimoramento visual focado na abordagem _Mobile-First_.
+- [ ] **Persistência de Sessão:** Armazenamento do token JWT no `localStorage` para manter o usuário autenticado mesmo após fechar ou recarregar a página.
+- [ ] **Gestão de Pedidos na Interface:**
+  - Inclusão de página/modal para visualização unitária e detalhada de cada pedido.
+  - Interface para atualização do status dos pedidos em tempo real.
+  - Funcionalidade para remoção de itens.
+  - Exibição expandida dos dados do cliente no pedido.
+
+### 🐳 **Infraestrutura**
+
+- [ ] **Containerização:** Criação dos arquivos `Dockerfile` e `docker-compose.yml` para facilitar a execução padronizada de toda a aplicação (Backend + Frontend + DB).
 
 ## 👤 Autor
 
